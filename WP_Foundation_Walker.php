@@ -52,8 +52,10 @@ class WP_Foundation_TopBar extends Walker_Nav_Menu {
      * The end of the menu
      */
     function end_lvl( &$output, $depth = 0, $args = array() ) {
+
         $indent = str_repeat("\t", $depth);
         $output .= "$indent</ul>\n";
+
     }
 
     /*
@@ -99,7 +101,9 @@ class WP_Foundation_TopBar extends Walker_Nav_Menu {
      * The end of each menu item
      */
     function end_el( &$output, $item, $depth = 0, $args = array() ) {
+
         $output .= "</li>\n";
+
     }
 
     private function build_attributes( $item ) {
