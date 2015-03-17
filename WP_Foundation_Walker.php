@@ -20,8 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 if ( ! class_exists( 'WP_Foundation_TopBar' ) ) {
 
-    class WP_Foundation_TopBar extends Walker_Nav_Menu
-    {
+    class WP_Foundation_TopBar extends Walker_Nav_Menu {
 
         /*
          * Add Top Bar specific CSS classes to menu items
