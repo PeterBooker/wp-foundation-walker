@@ -134,6 +134,17 @@ if ( ! class_exists( 'WP_Foundation_TopBar' ) ) {
          */
         public static function fallback( $args = array() ) {
 
+            /*
+             * No content for left side Fallback
+             */
+            if ( 'left' == $args['menu_class'] ) {
+
+                echo "<ul class=\"left\"></ul>";
+
+                return;
+
+            }
+
             $home_url = site_url( '/' );
 
             $admin_menu_url = admin_url( '/nav-menus.php' );
