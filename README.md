@@ -28,7 +28,6 @@ Then you can add the Top Bar Menu to your theme using code similar to this:
         <!-- Right Nav Section -->
         <?php
         wp_nav_menu( array(
-            'container' => false,
             'menu_class' => 'right',
             'theme_location' => 'topbar-right',
             'walker' => new WP_Foundation_TopBar(),
@@ -38,7 +37,6 @@ Then you can add the Top Bar Menu to your theme using code similar to this:
         <!-- Left Nav Section -->
         <?php
         wp_nav_menu( array(
-            'container' => false,
             'menu_class' => 'left',
             'theme_location' => 'topbar-left',
             'walker' => new WP_Foundation_TopBar(),
