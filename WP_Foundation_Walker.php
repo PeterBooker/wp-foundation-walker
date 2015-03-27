@@ -186,11 +186,11 @@ if ( ! class_exists( 'WP_Foundation_TopBar' ) ) {
                 remove_action( 'wp_head', '_admin_bar_bump_cb' );
 
                 $output = '<style type="text/css">' . "\n\t";
-                $output .= 'body.admin-bar #wpadminbar { position: fixed; }';
+                $output .= 'body.admin-bar #wpadminbar { position: fixed; }' . "\n\t";
                 $output .= 'body.admin-bar { padding-top: 46px; }' . "\n\t";
-                $output .= '@media ( min-width: 780px ) { body.admin-bar { padding-top: 32px; } }' . "\n";
                 $output .= 'body.admin-bar .sticky.fixed { margin-top: 46px; }' . "\n\t";
-                $output .= '@media ( min-width: 780px ) { body.admin-bar .sticky.fixed { margin-top: 32px; } }' . "\n";
+                $output .= '@media ( min-width: 780px ) { body.admin-bar .sticky.fixed { margin-top: 32px; } }' . "\n\t";
+                $output .= '@media ( min-width: 780px ) { body.admin-bar { padding-top: 32px; } }' . "\n\t";
                 $output .= '</style>' . "\n";
 
                 echo $output;
@@ -211,9 +211,9 @@ if ( ! class_exists( 'WP_Foundation_TopBar' ) ) {
                 $height = WP_Foundation_TopBar::$height;
 
                 $output = '<style type="text/css">' . "\n\t";
-                $output .= 'body.admin-bar #wpadminbar { position: fixed; }';
+                $output .= 'body.admin-bar #wpadminbar { position: fixed; }' . "\n\t";
                 $output .= 'body.admin-bar .fixed { margin-top: 46px; } body.admin-bar .fixed + div { margin-top: ' . $height . '; } body.admin-bar .fixed.expanded { margin-top: 0; }' . "\n\t";
-                $output .= '@media ( min-width: 780px ) { body.admin-bar .fixed { margin-top: 32px; } body.admin-bar .fixed + div { margin-top: ' . $height . '; } body.admin-bar .fixed.expanded { margin-top: 0; } }' . "\n";
+                $output .= '@media ( min-width: 780px ) { body.admin-bar .fixed { margin-top: 32px; } body.admin-bar .fixed + div { margin-top: ' . $height . '; } body.admin-bar .fixed.expanded { margin-top: 0; } }' . "\n\t";
                 $output .= '</style>' . "\n";
 
                 echo $output;
@@ -231,7 +231,7 @@ if ( ! class_exists( 'WP_Foundation_TopBar' ) ) {
      * Uncomment the relevant fix depending on your TopBar use, or add the CSS to your theme manually.
      */
     // Sticky TopBar + WP Admin Bar Fix
-    //add_action( 'wp_head', array( 'WP_Foundation_TopBar', 'sticky_fix' ), 5, 0 );
+    add_action( 'wp_head', array( 'WP_Foundation_TopBar', 'sticky_fix' ), 5, 0 );
     // Fixed TopBar + WP Admin Bar Fix
     //add_action( 'wp_head', array( 'WP_Foundation_TopBar', 'fixed_fix' ), 5, 0 );
 
