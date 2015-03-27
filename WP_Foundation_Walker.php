@@ -152,7 +152,26 @@ if ( ! class_exists( 'WP_Foundation_TopBar' ) ) {
 
         }
 
+        /*
+         * Filter Menu Args relevant for this Walker
+         */
+        public static function menu_args( $args ) {
+
+            $walker = new WP_Foundation_TopBar();
+
+            if ( $walker == $args['walker'] ) {
+                $args['container'] = false;
+                $args['fallback_cb'] = 'WP_Foundation_TopBar::fallback';
+            }
+
+            unset( $walker );
+
+            return $args;
+
+        }
+
     }
+    add_filter( 'wp_nav_menu_args', array( 'WP_Foundation_TopBar', 'menu_args' ) );
 
 }
 /**
