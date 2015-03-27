@@ -163,14 +163,12 @@ if ( ! class_exists( 'WP_Foundation_TopBar' ) ) {
          */
         public static function menu_args( $args ) {
 
-            $walker = new WP_Foundation_TopBar();
+            if ( $args['walker'] instanceof WP_Foundation_TopBar ) {
 
-            if ( $walker == $args['walker'] ) {
                 $args['container'] = false;
                 $args['fallback_cb'] = 'WP_Foundation_TopBar::fallback';
-            }
 
-            unset( $walker );
+            }
 
             return $args;
 
