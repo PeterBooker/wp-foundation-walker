@@ -3,7 +3,7 @@
  * Plugin Name: WP Foundation Walker
  * Plugin URI:  https://github.com/PeterBooker/wp-foundation-walker
  * Description: A custom WordPress Menu Walker compatible with Foundation's Top Bar. Can be used as a Must Use (MU) plugin or included in a Theme directly.
- * Version:     1.0
+ * Version:     1.1
  * Author:      Peter Booker
  * Author URI:  http://www.peterbooker.com
  * License:     GPLv2+
