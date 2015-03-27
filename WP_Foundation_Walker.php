@@ -170,35 +170,33 @@ if ( ! class_exists( 'WP_Foundation_TopBar' ) ) {
 
         }
 
-    }
-    add_filter( 'wp_nav_menu_args', array( 'WP_Foundation_TopBar', 'menu_args' ) );
+        /*
+         * Sticky TopBar + WP Admin Bar Fix
+         */
+        public static function sticky_fix() {
 
-}
-/**
- * Helper Functions to support Compatibility
- */
+            if ( ! is_admin() && is_admin_bar_showing() ) {
 
-/*
- * If using Top Bar at the top of the page, this ensures that it sits under the WordPress Admin Bar when it is active.
- */
-if ( ! function_exists( 'wp_foundation_admin_bar_fix' ) ) {
+                remove_action( 'wp_head', '_admin_bar_bump_cb' );
 
-    function wp_foundation_admin_bar_fix() {
+                $output = '<style type="text/css">' . "\n\t";
+                $output .= 'body.admin-bar #wpadminbar { position: fixed; }';
+                $output .= 'body.admin-bar { padding-top: 46px; }' . "\n\t";
+                $output .= '@media ( min-width: 780px ) { body.admin-bar { padding-top: 32px; } }' . "\n";
+                $output .= 'body.admin-bar .sticky.fixed { margin-top: 46px; }' . "\n\t";
+                $output .= '@media ( min-width: 780px ) { body.admin-bar .sticky.fixed { margin-top: 32px; } }' . "\n";
+                $output .= '</style>' . "\n";
 
-        if ( ! is_admin() && is_admin_bar_showing() ) {
+                echo $output;
 
-            remove_action( 'wp_head', '_admin_bar_bump_cb' );
-
-            $output = '<style type="text/css">' . "\n\t";
-            $output .= 'body.admin-bar { padding-top: 46px; }' . "\n\t";
-            $output .= '@media ( min-width: 780px ) { body.admin-bar { padding-top: 32px; } }' . "\n";
-            $output .= '</style>' . "\n";
-
-            echo $output;
+            }
 
         }
 
     }
-    add_action( 'wp_head', 'wp_foundation_admin_bar_fix' );
+    // Force Certain Args for Compatibility
+    add_filter( 'wp_nav_menu_args', array( 'WP_Foundation_TopBar', 'menu_args' ) );
+    // Sticky TopBar + WP Admin Bar Fix
+    add_action( 'wp_head', array( 'WP_Foundation_TopBar', 'sticky_fix' ), 5, 0 );
 
 }
