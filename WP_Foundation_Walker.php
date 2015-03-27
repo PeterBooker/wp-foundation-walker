@@ -189,8 +189,8 @@ if ( ! class_exists( 'WP_Foundation_TopBar' ) ) {
                 $output .= 'body.admin-bar #wpadminbar { position: fixed; }' . "\n\t";
                 $output .= 'body.admin-bar { padding-top: 46px; }' . "\n\t";
                 $output .= 'body.admin-bar .sticky.fixed { margin-top: 46px; }' . "\n\t";
-                $output .= '@media ( min-width: 780px ) { body.admin-bar .sticky.fixed { margin-top: 32px; } }' . "\n\t";
-                $output .= '@media ( min-width: 780px ) { body.admin-bar { padding-top: 32px; } }' . "\n\t";
+                $output .= '@media ( min-width: 782px ) { body.admin-bar .sticky.fixed { margin-top: 32px; } }' . "\n\t";
+                $output .= '@media ( min-width: 782px ) { body.admin-bar { padding-top: 32px; } }' . "\n\t";
                 $output .= '</style>' . "\n";
 
                 echo $output;
@@ -213,7 +213,7 @@ if ( ! class_exists( 'WP_Foundation_TopBar' ) ) {
                 $output = '<style type="text/css">' . "\n\t";
                 $output .= 'body.admin-bar #wpadminbar { position: fixed; }' . "\n\t";
                 $output .= 'body.admin-bar .fixed { margin-top: 46px; } body.admin-bar .fixed + div { margin-top: ' . $height . '; } body.admin-bar .fixed.expanded { margin-top: 0; }' . "\n\t";
-                $output .= '@media ( min-width: 780px ) { body.admin-bar .fixed { margin-top: 32px; } body.admin-bar .fixed + div { margin-top: ' . $height . '; } body.admin-bar .fixed.expanded { margin-top: 0; } }' . "\n\t";
+                $output .= '@media ( min-width: 782px ) { body.admin-bar .fixed { margin-top: 32px; } body.admin-bar .fixed + div { margin-top: ' . $height . '; } body.admin-bar .fixed.expanded { margin-top: 0; } }' . "\n\t";
                 $output .= '</style>' . "\n";
 
                 echo $output;
