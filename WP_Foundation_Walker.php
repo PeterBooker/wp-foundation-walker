@@ -231,7 +231,7 @@ if ( ! class_exists( 'WP_Foundation_TopBar' ) ) {
      * Uncomment the relevant fix depending on your TopBar use, or add the CSS to your theme manually.
      */
     // Sticky TopBar + WP Admin Bar Fix
-    add_action( 'wp_head', array( 'WP_Foundation_TopBar', 'sticky_fix' ), 5, 0 );
+    //add_action( 'wp_head', array( 'WP_Foundation_TopBar', 'sticky_fix' ), 5, 0 );
     // Fixed TopBar + WP Admin Bar Fix
     //add_action( 'wp_head', array( 'WP_Foundation_TopBar', 'fixed_fix' ), 5, 0 );
 
