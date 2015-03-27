@@ -108,6 +108,9 @@ if ( ! class_exists( 'WP_Foundation_TopBar' ) ) {
 
         }
 
+        /*
+         * Build attributes string
+         */
         private function build_attributes( $item ) {
 
             $attributes = '';
@@ -117,6 +120,35 @@ if ( ! class_exists( 'WP_Foundation_TopBar' ) ) {
             $attributes .= ! empty( $item->url ) ? ' href="' . esc_attr( $item->url ) . '"' : '';
 
             return $attributes;
+
+        }
+
+        /*
+         * Provide fallback output incase no Menu is selected.
+         */
+        public static function fallback( $args = array() ) {
+
+            $home_url = site_url( '/' );
+
+            $admin_menu_url = admin_url( '/nav-menus.php' );
+
+            $output = "<ul class=\"right\">\n";
+
+            $output .= "<li class=\"menu-item\">\n";
+            $output .= "<a href=\"{$home_url}\">Home</a>\n";
+            $output .= "</li>\n";
+
+            if ( current_user_can( 'manage_options' ) ) {
+
+                $output .= "<li class=\"menu-item\">\n";
+                $output .= "<a href=\"{$admin_menu_url}\">Customise Menu</a>\n";
+                $output .= "</li>\n";
+
+            }
+
+            $output .= "</ul>";
+
+            echo $output;
 
         }
 
