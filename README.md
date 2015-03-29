@@ -1,12 +1,14 @@
 # WP Foundation Walker
 
-A custom menu walker to make the standard WordPress Menu system compatible with the [Foundation 5](http://foundation.zurb.com/) TopBar. (http://foundation.zurb.com/docs/components/topbar.html)
+A set of custom menu walkers to make the standard WordPress Menu system compatible with the [Foundation 5](http://foundation.zurb.com/) [Top Bar](http://foundation.zurb.com/docs/components/topbar.html) and [Off-Canvas](http://foundation.zurb.com/docs/components/offcanvas.html) Menus.
 
 ## Usage
 
-You can drop the WP_Foundation_Walker.php file into the /mu-plugins/ folder or add it to your theme files and include it manually.
+You can drop the files into the /mu-plugins/ folder or add them to your theme files and include it manually (or just copy the code).
 
-### Example
+## Foundation Top Bar Menu
+
+### Example Usage
 
 Then you can add the Top Bar Menu to your theme using code similar to this:
 
@@ -50,6 +52,8 @@ Then you can add the Top Bar Menu to your theme using code similar to this:
 Notes:
 * Remember to edit the 'theme_location' value with menu areas relevant to your theme.
 * The 'container' value must be false or a container element is added around the menu.
+
+## Foundation Off-Canvas Menu
 
 ## Requirements
 
