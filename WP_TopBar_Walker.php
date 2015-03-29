@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: WP Foundation Walker
+ * Plugin Name: WP TopBar Walker
  * Plugin URI:  https://github.com/PeterBooker/wp-foundation-walker
  * Description: A custom WordPress Menu Walker compatible with the Foundation 5 Top Bar. Can be used as a Must Use (MU) plugin or included in a Theme directly.
  * Version:     1.1
@@ -18,9 +18,9 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Custom Menu Walker for Foundation's Top Bar menu.
  * Foundation Docs - http://foundation.zurb.com/docs/components/topbar.html
  */
-if ( ! class_exists( 'WP_Foundation_TopBar' ) ) {
+if ( ! class_exists( 'WP_TopBar_Walker' ) ) {
 
-    class WP_Foundation_TopBar extends Walker_Nav_Menu {
+    class WP_TopBar_Walker extends Walker_Nav_Menu {
 
         /*
          * Default height of Foundation TopBar
@@ -173,10 +173,10 @@ if ( ! class_exists( 'WP_Foundation_TopBar' ) ) {
          */
         public static function menu_args( $args ) {
 
-            if ( $args['walker'] instanceof WP_Foundation_TopBar ) {
+            if ( $args['walker'] instanceof WP_TopBar_Walker ) {
 
                 $args['container'] = false;
-                $args['fallback_cb'] = 'WP_Foundation_TopBar::fallback';
+                $args['fallback_cb'] = 'WP_TopBar_Walker::fallback';
 
             }
 
@@ -216,7 +216,7 @@ if ( ! class_exists( 'WP_Foundation_TopBar' ) ) {
 
                 remove_action( 'wp_head', '_admin_bar_bump_cb' );
 
-                $height = WP_Foundation_TopBar::$height;
+                $height = WP_TopBar_Walker::$height;
 
                 $output = '<style type="text/css">' . "\n\t";
                 $output .= 'body.admin-bar #wpadminbar { position: fixed; }' . "\n\t";
@@ -232,15 +232,15 @@ if ( ! class_exists( 'WP_Foundation_TopBar' ) ) {
 
     }
     // Force Certain Args for Compatibility
-    add_filter( 'wp_nav_menu_args', array( 'WP_Foundation_TopBar', 'menu_args' ) );
+    add_filter( 'wp_nav_menu_args', array( 'WP_TopBar_Walker', 'menu_args' ) );
 
 
     /*
      * Uncomment the relevant fix depending on your TopBar use, or add the CSS to your theme manually.
      */
     // Sticky TopBar + WP Admin Bar Fix
-    //add_action( 'wp_head', array( 'WP_Foundation_TopBar', 'sticky_fix' ), 5, 0 );
+    //add_action( 'wp_head', array( 'WP_TopBar_Walker', 'sticky_fix' ), 5, 0 );
     // Fixed TopBar + WP Admin Bar Fix
-    //add_action( 'wp_head', array( 'WP_Foundation_TopBar', 'fixed_fix' ), 5, 0 );
+    //add_action( 'wp_head', array( 'WP_TopBar_Walker', 'fixed_fix' ), 5, 0 );
 
 }
