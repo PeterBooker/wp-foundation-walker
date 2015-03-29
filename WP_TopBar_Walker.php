@@ -2,8 +2,8 @@
 /**
  * Plugin Name: WP TopBar Walker
  * Plugin URI:  https://github.com/PeterBooker/wp-foundation-walker
- * Description: A custom WordPress Menu Walker compatible with the Foundation 5 Top Bar. Can be used as a Must Use (MU) plugin or included in a Theme directly.
- * Version:     1.1
+ * Description: A custom WordPress Menu Walker compatible with the Foundation 5 Top Bar menu. Can be used as a Must Use (MU) plugin or included in a Theme directly.
+ * Version:     1.2
  * Author:      Peter Booker
  * Author URI:  http://www.peterbooker.com
  * License:     GPLv2+
