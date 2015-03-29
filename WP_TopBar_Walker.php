@@ -244,3 +244,10 @@ if ( ! class_exists( 'WP_TopBar_Walker' ) ) {
     //add_action( 'wp_head', array( 'WP_TopBar_Walker', 'fixed_fix' ), 5, 0 );
 
 }
+
+/**
+ * TODO
+ *
+ * 1) Add helper function to create the extra HTML required.
+ *
+ */
