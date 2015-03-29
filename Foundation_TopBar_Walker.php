@@ -145,9 +145,8 @@ if ( ! class_exists( 'WP_Foundation_TopBar' ) ) {
 
             }
 
-            $home_url = site_url( '/' );
-
-            $admin_menu_url = admin_url( '/nav-menus.php' );
+            $home_url = esc_url( site_url( '/' ) );
+            $admin_menu_url = esc_url( admin_url( '/nav-menus.php' ) );
 
             $output = "<ul class=\"right\">\n";
 
